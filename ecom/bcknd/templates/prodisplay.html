@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="table-responsive pt-3">
+                    <table class="table table-striped project-orders-table">
+                        <tr>
+                            <th>Category</th>
+                            <th>Product</th>
+                            <th>Size</th>
+                            <th>Prize</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                        </tr>
+                        {% for i in pro %}
+                        <tr>
+                            <td>{{i.cname}}</td>
+                            <td>{{i.pname}}</td>
+                            <td>{{i.size}}</td>
+                            <td>{{i.prize}}</td>
+                            <td>{{i.description}}</td>
+                            <td>
+                                <img src="{{i.image.url}}" alt="" >
+                            </td>
+                            <td>
+                                <a href="proedit/{{i.id}}">
+                                    <button type="button" class="btn btn-success btn-sm btn-icon-text mr-3">
+                                        Edit
+                                        <i class="typcn typcn-edit btn-icon-append"></i>                          
+                                    </button> 
+                                </a>
+                                
+                                <a href="prodelete/{{i.id}}">
+                                    <button type="button" class="btn btn-danger btn-sm btn-icon-text">
+                                        Delete
+                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>                          
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+{% endblock %}

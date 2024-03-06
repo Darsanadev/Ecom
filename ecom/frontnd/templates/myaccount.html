@@ -1,0 +1,338 @@
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Eiser ecommerce</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'Home/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/vendors/linericon/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/css/themify-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/vendors/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/vendors/lightbox/simpleLightbox.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/vendors/nice-select/css/nice-select.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/vendors/animate-css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/vendors/jquery-ui/jquery-ui.' %}" />
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'Home/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'Home/css/responsive.css' %}" />
+  </head>
+
+  <body>
+    <!--================Header Menu Area =================-->
+    <header class="header_area">
+      <div class="top_menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="float-left">
+                <p>Phone: +01 256 25 235</p>
+                <p>email: info@eiser.com</p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="float-right">
+                <ul class="right_side">
+                  <li>
+                    <a href="{% url 'frontnd:myaccount' %}">
+                      My account
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'frontnd:whish' %}">
+                      Whish list
+                    </a>
+                  </li>
+                  <li>
+                    <a href="tracking.html">
+                      Orders
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'frontnd:contact' %}">
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main_menu">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="index.html">
+              <img src="img/logo.png" alt="" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div
+              class="collapse navbar-collapse offset w-100"
+              id="navbarSupportedContent">
+              <div class="row w-100 mr-0">
+                <div class="col-lg-7 pr-0">
+                  <ul class="nav navbar-nav center_nav pull-right">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'frontnd:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item submenu dropdown">
+                      <a
+                        href="#"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        >Shop</a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="category.html"
+                            >Shop Category</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="single-product.html"
+                            >Product Details</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="checkout.html"
+                            >Product Checkout</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="cart.html">Shopping Cart</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item submenu dropdown">
+                      <a href="{% url 'frontnd:category' %}" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Category</a>
+                        
+                      <ul class="dropdown-menu">
+                        {% for i in cate %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'frontnd:product' catname=i.category %}">{{i.category}}</a></li>
+                        {% endfor %}
+                      </ul>
+                     
+                    </li>
+                    <li class="nav-item submenu dropdown">
+                      <a
+                        href="#"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false" >Pages</a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="tracking.html">Tracking</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="elements.html">Elements</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'frontnd:contact' %}">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-5 pr-0">
+                  <ul class="nav navbar-nav navbar-right right_nav pull-right">
+                    <li class="nav-item">
+                      <a href="#" class="icons">
+                        <i class="ti-search" aria-hidden="true"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="{% url 'frontnd:cart' %}" class="icons">
+                        <i class="ti-shopping-cart"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="{% url 'frontnd:contact' %}" class="icons">
+                        <i class="ti-user" aria-hidden="true"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="{% url 'frontnd:whish' %}" class="icons">
+                        <i class="ti-heart" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    </body>
+</html>
+{% endblock %}
+    <!--================Header Menu Area =================-->
+
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center">
+            <div class="mb-3 mb-md-0">
+              <h1>Accouonts</h1>
+              <p>Very us move be blessed multiply night</p>
+            </div>
+            <div class="page_link">
+              <a href="{% url 'frontnd:home' %}">Home</a>
+              <a href="{% url 'frontnd:contact' %}">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<section class="login_part section_padding ">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_text text-center">
+                    <div class="login_part_text_iner">
+                      <img class="veggg" src="{% static 'Home/img/banner/bbbbb.jpeg' %}" alt="">
+                        <h2 class="new">New to our Shop?</h2>
+                        <p class="para">There are advances being made in science and technology<br> everyday, and a good example of this is the</p>
+                        <button class="accbtn"><a href="#" class="acc">CREATE AN ACCOUNT</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_form">
+                    <div class="login_part_form_iner">
+                        <h3 class="wlcm">Welcome Back ! <br> Please Sign in now</h3>
+                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        
+                            <div class="col-md-12 form-group p_star" id="name">
+                                <input type="text" class="form-control" id="name" name="name" value="" placeholder="Username" fdprocessedid="2545f">
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" fdprocessedid="v815bwk">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <div class="creat_account d-flex align-items-center">
+                                    <input type="checkbox" id="f-option" name="selector"><br><br>
+                                    <label for="f-option" name="rer">Remember me</label>
+                                </div>
+                                <button type="submit" value="submit" class="btn_3" fdprocessedid="l50css">Log in</button>
+                                <a class="lost_pass" href="#">forget password?</a>
+                            </div>
+                        </form>
+                        <style>
+                          .btn_3:hover{
+                            background-color: rgb(130, 135, 215);
+                            color: white;
+                          }
+                          .btn_3{
+                            width: 550px;
+                            border-radius: 5px;
+                            
+                            border-color: rgb(198, 212, 212);
+                            background-color: rgb(213, 205, 205);
+                            font-size: 19px;
+                          }
+                          .acc{
+                            font-size: 14px;
+                            color: crimson;
+                          }
+                          .accbtn{
+                            width: 300px;
+                            height: 40px;
+                            opacity: 0.7px;
+                            border-radius: 22px;
+                            margin-top: 20px;
+                          }
+                          .wlcm:hover{
+                            color: red;
+                          }
+                          .wlcm{
+                            margin-top: 100px;
+                            margin-left: 100px;
+                            font-family: Georgia, 'Times New Roman', Times, serif;
+                          }
+                          .lost_pass{
+                            margin-left: 400px;
+                            margin-top: 300px;
+                            
+                          }
+                          .veggg{
+                            width: 100%;
+                            height: 550px;
+
+                          }
+                          .new{
+                            font-size: 30px;
+                            color: crimson;
+                            margin-top: -270px
+  
+                          }
+                          .para{
+                            font-size: 16px;
+                            color: rgb(51, 50, 50);
+                            margin-top: 30px;
+
+                          }
+                          #name{
+                            margin-top: 20px;
+
+                          }
+                          .rer{
+                            font-size: 22px;
+                            color: red ;
+                            margin-left: 12px;
+
+                          }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

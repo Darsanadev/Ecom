@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h1> Edit Product detail....</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="cname" placeholder="Category"><br><br>
+        <input type="text" name="pname" placeholder="Product"><br><br>
+        <input type="text" name="sizee" placeholder="size"><br><br>
+        <input type="number" name="prize" placeholder="Prize"><br><br>
+        <input type="text" name="description" placeholder="Description"><br><br>
+        <input type="file" name="image"><br><br>
+        <button type="submit">REGISTER</button>
+    </form>
+</body>
+</html>

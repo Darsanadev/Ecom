@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <th>Name</th>
+            <th>place</th>
+            <th>Mobile</th>
+            <th>Image</th>
+        </tr>
+        {% for i in dataa %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.place}}</td>
+            <td>{{i.mobile}}</td>
+            <td>
+                <img src="{{i.image.url}}" alt=" " width="100px" height="100px">
+
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+</body>
+</html>

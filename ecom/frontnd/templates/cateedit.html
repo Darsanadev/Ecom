@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Edit karooo</h1>
+        <input type="text" name="name" placeholder="name" value="{{cate.category}}"><br><br>
+        <input type="text" name="description" placeholder="Description" value="{{cate.description}}"><br><br>
+        <img src="{{cate.media.url}}" width="100px"  height="100px" ><br><br>
+        <input type="file" name="image" ><br><br>
+        <button type="submit">REGISTER</button>
+    </form>
+</body>
+</html>

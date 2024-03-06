@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h1>Product detail</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <select name="cname">
+            <option>select Category</option>
+            {% for i in catt %}
+            <option>{{i.category}}</option>
+            {% endfor %} 
+        </select><br><br>
+        <input type="text" name="pname" placeholder="Product"><br><br>
+        <input type="text" name="size" placeholder="size"><br><br>
+        <input type="number" name="prize" placeholder="Prize"><br><br>
+        <input type="text" name="description" placeholder="Description"><br><br>
+        <input type="file" name="image"><br><br>
+        <button type="submit">REGISTER</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+
+    {% if messages %}
+        {% for i in messages %}
+            {% if i.tags == 'warning' %}
+                <script>
+                    swal('{{i}}', '', 'warning')
+                </script>  
+            {% elif i.tags == 'success' %}
+                <script>
+                    swal('{{i}}', '', 'success')
+                </script>
+            {% elif i.tags == 'error' %}
+                <script>
+                    swal('{{i}}', '', 'error')
+                </script>
+            {% else %}
+                <script>
+                    swal('{{i}}', '', 'info')
+                </script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
+{% endblock %}

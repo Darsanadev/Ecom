@@ -1,0 +1,161 @@
+<!DOCTYPE html> 
+{% load static %} 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" href="logn.css"> 
+    <title>Document</title> 
+</head>
+<body style="background-color: cadetblue;">
+    <!-- <div class="bkimg"> -->
+    <!-- <img src="traveller.jpeg" alt=" " class="img"> -->
+    <div class="row">
+        <div col-md-6>
+            <div class="mainbox">
+                <div>
+                    <h2 class="logg">.</h2>
+                </div>
+               
+                <h1 style="text-align: center; font-family: 'poppins', sans-serif; " >Login / Register...</h1>
+               
+                <form action="" method="" enctype="multipart/form-data">
+                     <!-- Email input -->
+                    <div class="form_outline">
+                        <label for="Email" class="email" >Username</label><br>
+                        <input type="email" name="email" placeholder=" Enter Username" class="emailbox" id="jqinput1" ">
+                        <hr  style="width: 300px;">
+                    </div>
+                    <div class="form_outline">
+                        <label for="password" class="password" >Password</label><br>
+                        <input type="password" name="email" placeholder=" Enter password" class="passwordbox" id="jqinput2" ">
+                        <hr style="width: 300px;">
+                    </div><br><br>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <input class="check" type="checkbox">
+                            <label for="" >Remember me</label>
+
+                        </div>
+                        <div class="forgt">
+                            <button class="forgot"><a href="">FORGOT PASSWORD ?</a></button> 
+
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <p class="sign"> Or sign up using</p>
+                    </div>
+                    <div class="imag">
+                        <img class="image" id="goo" src="{% static 'Home/img/banner/fbb.png' %}" >
+                        <img class="image" id="go" src="{% static 'Home/img/banner/goog.png' %}">
+                        <img class="image" id="goo" src="{% static 'Home/img/banner/twit.png' %}">
+
+                    </div>
+                    
+                    <!-- Submit button -->
+                    <button type="submit" class="sumit">SUBMIT</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <style>
+        
+        .mainbox{
+            margin: auto;
+            margin-top: 50px;
+            width: 400px;
+            height: 500px;
+            background: #ffffff;
+            border-radius: 8px;
+            opacity: 1.5px;
+            box-shadow: rgb(151, 148, 148) 0px 1px 4px;
+        }
+        .h1{
+            text-align: center;
+            font-family: 'poppins', sans-serif;
+            margin-top: 200px; 
+        }
+        .submit:hover{
+            background-color: grey;
+            color: chartreuse;
+        }
+        .sumit{
+            width: 400px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            margin-left: 0px;
+            margin-top: 30px;
+        }
+        .submit:hover{
+            background-color: grey;
+        }
+        .email{
+            margin-top: 200px;
+            margin-left: 50px;
+        }
+        .emailbox{
+            margin-left: 70px;
+            margin-top: 10px;
+            border: none;
+            width: 270px;
+            height: 30px;
+            background-color: #ffffff;
+            
+        }
+        .password{
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+        .passwordbox{
+            margin-left: 70px;
+            border: none;
+            margin-top: 10px;
+            width: 270px;
+            height: 30px;
+            background-color: #ffffff;
+            
+        }
+        .forgt{
+            margin-top: -20px;
+        }
+        .forgot{
+            border: none;
+            margin-left: 190px;
+            margin-top: -70px;
+            font-size: 12px;
+
+        }
+        .check{
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+        .sign{
+            text-align: center;
+            margin-top: 50px;
+        }
+        #goo{
+            border-radius: 50%;
+        }
+        #go{
+            border-radius: 50px;
+        }
+        .image{
+            width: 25px;
+            height: 25px;
+        }
+        .imag{
+            text-align: center;
+        }
+        .logg{
+            margin-top: 200px;
+            color: white;
+        }
+
+    </style>
+
+</body>
+</html>
